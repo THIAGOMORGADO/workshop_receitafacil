@@ -17,11 +17,3 @@
 2. npm / yarn install
 3. npx expo start 
 3. npm run ios / android
-
-##### Images da aplicacao IOS 
-
-![alt](./assets/Simulator%20Screenshot%20-%20iPhone%2014%20Pro%20Max%20-%202023-04-04%20at%2006.00.53.png)
-
-##### Images da aplicacao ANDROID 
-
-![alt](./assets/Screenshot_1680598956.png)

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "hackingApp",
-    "slug": "hackingApp",
+    "name": "ReceitaFacil",
+    "slug": "ReceitaFacil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

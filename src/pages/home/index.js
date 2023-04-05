@@ -1,11 +1,24 @@
 
-import {View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity}from 'react-native';
-import { Logo } from '../../components/logo';
+import { useState, useEffect } from 'react';
+import {View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, FlatList}from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
-import { useState } from 'react';
+
+import { Logo } from '../../components/logo';
+import api from '../../services/api';
+import {FoodsList} from '../../components/foodLIst'
 
 export function Home() {
   const [inputValue, setInputValues] = useState("");
+  const [foods, setFoods] = useState([]);
+
+  useEffect(() => {
+
+    async function fetchapi() {
+      const response = await api.get("/foods");
+     setFoods(response.data)
+    }
+    fetchapi();
+  }, [])
 
   function handleSearch() {
     console.log(inputValue);
@@ -14,8 +27,8 @@ export function Home() {
   return(
     <SafeAreaView style={styles.container}>
      <Logo />
-     <Text styles={styles.title}>Encontre a Receita.</Text>
-     <Text styles={styles.title}>O que combina com vc</Text>
+     <Text style={styles.title}>Encontre a Receita.</Text>
+     <Text style={styles.title}>O que combina com vc</Text>
 
      <View
       style={styles.form}
@@ -34,6 +47,15 @@ export function Home() {
         <Ionicons name='search' size={28} color='#4cbe6c'/>
       </TouchableOpacity>
      </View>
+
+    <FlatList 
+      data={foods}
+      keyExtractor={(item) => String(item.id)}
+      renderItem={({item}) => <FoodsList data={item}/> }
+
+    />
+
+
     </SafeAreaView>
   )
 }

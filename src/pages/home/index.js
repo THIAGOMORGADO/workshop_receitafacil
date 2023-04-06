@@ -28,7 +28,7 @@ export function Home() {
     <SafeAreaView style={styles.container}>
      <Logo />
      <Text style={styles.title}>Encontre a Receita.</Text>
-     <Text style={styles.title}>O que combina com vc</Text>
+     <Text style={styles.title}>O que combina com voce</Text>
 
      <View
       style={styles.form}
@@ -48,11 +48,12 @@ export function Home() {
       </TouchableOpacity>
      </View>
 
-    <FlatList 
+    <FlatList
+    showsVerticalScrollIndicator={false} 
       data={foods}
       keyExtractor={(item) => String(item.id)}
       renderItem={({item}) => <FoodsList data={item}/> }
-
+      
     />
 
 

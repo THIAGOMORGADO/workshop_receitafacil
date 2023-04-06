@@ -19,9 +19,9 @@
 3. npm run ios / android
 ```
 #### Para utilizar o arquivo dv,json e preciso instalar 
-
-1. npm install -g json-server 
-
+```markdown
+  npm install -g json-server 
+```
   Comando para rodar api
 
 ```markdown

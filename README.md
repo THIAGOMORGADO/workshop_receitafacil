@@ -12,12 +12,12 @@
 </p>
 
 #### Para baixar e usar usamos alguns comando para instalacao 
-
+```markdown
 1. Git clone https://github.com/THIAGOMORGADO/workshop_receitafacil.git
 2. npm / yarn install
 3. npx expo start 
 3. npm run ios / android
-
+```
 #### Para utilizar o arquivo dv,json e preciso instalar 
 
 1. npm install -g json-server 

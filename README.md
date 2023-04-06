@@ -18,7 +18,7 @@
 3. npx expo start 
 3. npm run ios / android
 ```
-#### Para utilizar o arquivo dv,json e preciso instalar 
+#### Para utilizar o arquivo db.json e preciso instalar 
 ```markdown
   npm install -g json-server 
 ```

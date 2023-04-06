@@ -17,3 +17,13 @@
 2. npm / yarn install
 3. npx expo start 
 3. npm run ios / android
+
+#### Para utilizar o arquivo dv,json e preciso instalar 
+
+1. npm install -g json-server 
+
+  Comando para rodar api
+
+```markdown
+  json-server –watch -d 180 –host SEU-IP db.json
+```

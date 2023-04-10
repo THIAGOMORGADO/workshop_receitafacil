@@ -1,8 +1,23 @@
-import {View, Text, StyleSheet} from 'react-native';
+import { Text, StyleSheet} from 'react-native';
+import {View} from 'moti'
 
 export function Logo() {
   return(
-    <View style={styles.container}>
+    <View
+    from={{
+      opacity: 0,
+      translateX: -50
+     }}
+     animate={{
+      opacity: 1,
+      translateX: 0
+     }}
+     transition={{
+      type: "timing",
+      duration: 700
+     }} 
+      style={styles.container}
+    >
       <Text style={styles.title}>Receita Facil</Text>
     </View>
   )

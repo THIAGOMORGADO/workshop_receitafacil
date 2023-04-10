@@ -67,9 +67,11 @@ export function Details({}) {
     if(favorites) {
       await removeFavorite(receipe.id);
       setFavorites(false)
+      alert('Item salvo com sucesso')
     } else {
       await saveFavorite("@appreceita", receipe)
       setFavorites(true)
+      alert('Item deletado com sucesso')
     }
   }
   return (

@@ -2,12 +2,15 @@
 import { useState, useEffect } from 'react';
 import {View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, FlatList}from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
+import {useNavigation} from '@react-navigation/native';
+import {Text as MotiText} from 'moti';
 
 import { Logo } from '../../components/logo';
 import api from '../../services/api';
 import {FoodsList} from '../../components/foodLIst'
 
 export function Home() {
+  const navigation = useNavigation();
   const [inputValue, setInputValues] = useState("");
   const [foods, setFoods] = useState([]);
 
@@ -21,14 +24,51 @@ export function Home() {
   }, [])
 
   function handleSearch() {
-    console.log(inputValue);
+    if(!inputValue) return;
+    let input = inputValue;
+    setInputValues("")
+    navigation.navigate("Search", {name: input});
+    
   }
 
   return(
     <SafeAreaView style={styles.container}>
      <Logo />
-     <Text style={styles.title}>Encontre a Receita.</Text>
-     <Text style={styles.title}>O que combina com voce</Text>
+     <MotiText
+     from={{
+      opacity: 0,
+      translateY: 15
+
+     }}
+     animate={{
+      opacity: 1,
+      translateY: 0
+     }}
+     transition={{
+      delay: 100,
+      type: "timing",
+      duration: 650
+     }}
+
+      style={styles.title}
+     >Encontre a Receita.</MotiText>
+     <MotiText 
+     from={{
+      opacity: 0,
+      translateY: 18
+
+     }}
+     animate={{
+      opacity: 1,
+      translateY: 0
+     }}
+     transition={{
+      delay: 200,
+      type: "timing",
+      duration: 850
+     }}
+     style={styles.title}
+     >O que combina com voce</MotiText>
 
      <View
       style={styles.form}

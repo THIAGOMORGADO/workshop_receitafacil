@@ -28,4 +28,9 @@
   json-server –watch -d 180 –host SEU-IP db.json
 ```
 
-#### trabalhamos no projeto com webView para chamar a tela no youtube no modal
+#### trabalhamos no projeto com webView para chamar a tela 
+
+
+
+ficou melhor com o pt?
+sim sim 
